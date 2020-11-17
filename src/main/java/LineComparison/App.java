@@ -24,11 +24,17 @@ public class App {
 		System.out.println("Length of 2nd Line is : " + length2);
 		Double line1 = new Double(length1);
 		Double line2 = new Double(length2);
-		boolean equal = line1.equals(line2);
-		if (equal)
+		boolean ifEqual = line1.equals(line2);
+		if (ifEqual)
 			System.out.println("Lines are Equal");
-		else
-			System.out.println("Lines are Not Equal");
-
+		else {
+			int compare = line1.compareTo(line2);
+			if (compare == 0)
+				System.out.println("Both Lines are Equal");
+			else if (compare > 0)
+				System.out.println("Line 1 is larger");
+			else
+				System.out.println("Line 2 is larger");
+		}
 	}
 }
