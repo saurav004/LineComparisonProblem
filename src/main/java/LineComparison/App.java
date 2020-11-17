@@ -5,15 +5,30 @@ import java.util.Random;
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Line Comparison Computation Program");
-		double length = 0.0;
+		double length1;
+		double length2;
 		Random random = new Random();
 		double x1 = random.nextInt(10) + 1;
-		double y1 = random.nextInt(10) + 1;
 		double x2 = random.nextInt(10) + 1;
+		double y1 = random.nextInt(10) + 1;
 		double y2 = random.nextInt(10) + 1;
-		length = (Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))));
-		System.out.println("End points are x1=" + x1 + "y1 =" + y1);
-		System.out.println("End points are x2=" + x2 + "y2 =" + y2);
-		System.out.println("length of the line is = " + length);
+		double x3 = random.nextInt(10) + 1;
+		double x4 = random.nextInt(10) + 1;
+		double y3 = random.nextInt(10) + 1;
+		double y4 = random.nextInt(10) + 1;
+
+		length1 = (Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))));
+		length2 = (Math.sqrt(((x4 - x3) * (x4 - x3)) + ((y4 - y3) * (y4 - y3))));
+
+		System.out.println("Length of 1st Line is : " + length1);
+		System.out.println("Length of 2nd Line is : " + length2);
+		Double line1 = new Double(length1);
+		Double line2 = new Double(length2);
+		boolean equal = line1.equals(line2);
+		if (equal)
+			System.out.println("Lines are Equal");
+		else
+			System.out.println("Lines are Not Equal");
+
 	}
 }
