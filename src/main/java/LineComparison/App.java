@@ -5,25 +5,19 @@ import java.util.Random;
 public class App {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Line Comparison Computation Program");
-		double length1;
-		double length2;
-		Random random = new Random();
-		double x1 = random.nextInt(10) + 1;
-		double x2 = random.nextInt(10) + 1;
-		double y1 = random.nextInt(10) + 1;
-		double y2 = random.nextInt(10) + 1;
-		double x3 = random.nextInt(10) + 1;
-		double x4 = random.nextInt(10) + 1;
-		double y3 = random.nextInt(10) + 1;
-		double y4 = random.nextInt(10) + 1;
+		Point line1Point1 = new Point(0, 0);
+		Point line1Point2 = new Point(10, 0);
+		Point line2Point1 = new Point(0, 0);
+		Point line2Point2 = new Point(8, 0);
+		Line firstLine = new Line(line1Point1, line1Point2);
+		Line secondLine = new Line(line2Point1, line2Point2);
 
-		length1 = (Math.sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))));
-		length2 = (Math.sqrt(((x4 - x3) * (x4 - x3)) + ((y4 - y3) * (y4 - y3))));
+		System.out.println("Length of 1st Line is : " + firstLine.length);
+		System.out.println("Length of 2nd Line is : " + secondLine.length);
+		LineComparison(firstLine, secondLine);
+	}
 
-		System.out.println("Length of 1st Line is : " + length1);
-		System.out.println("Length of 2nd Line is : " + length2);
-		Double line1 = new Double(length1);
-		Double line2 = new Double(length2);
+	public static int LineComparison(Line line1, Line line2) {
 		boolean ifEqual = line1.equals(line2);
 		if (ifEqual)
 			System.out.println("Both Lines are Equal");
@@ -31,8 +25,11 @@ public class App {
 			int compare = line1.compareTo(line2);
 			if (compare > 0)
 				System.out.println("Line 1 is larger");
+			else if (compare == 0)
+				System.out.println("Both Lines are Equal");
 			else
 				System.out.println("Line 2 is larger");
 		}
+		return 0;
 	}
 }
